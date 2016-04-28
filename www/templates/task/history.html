@@ -1,0 +1,22 @@
+<ion-view view-title="Archived Tasks">
+  <ion-content>
+
+    <div class="item item-divider" ng-repeat-start="(dateTask, tasksByDate) in historyCtrl.tasks">
+      {{dateTask}}
+    </div>
+
+    <ion-item ng-repeat="task in tasksByDate">
+      <span class="ft-icon" ng-class="historyCtrl.getIconStatus(task)"></span> {{task.name}} ({{task.user}})
+    </ion-item>
+
+    <div ng-repeat-end></div>
+
+    <div ng-show="taskCtrl.noInternetConnection">
+      <h2 class="center vertical-approximate-center">No internet connection, please check your network then <a
+        ng-click="taskCtrl.testConnection()">try again</a></h2>
+    </div>
+
+    <ion-spinner class="center vertical-approximate-center" ng-show="historyCtrl.loading" icon="spiral"></ion-spinner>
+
+  </ion-content>
+</ion-view>

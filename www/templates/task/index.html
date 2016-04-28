@@ -1,0 +1,59 @@
+<ion-view view-title="Today is {{taskCtrl.newTask.date | date: 'EEEE, MMMM d, y'}}">
+
+  <ion-nav-buttons side="left" ng-hide="taskCtrl.noInternetConnection">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div ng-hide="taskCtrl.noInternetConnection">
+      <div class="center">
+
+        <div ng-show="taskCtrl.isAddMode == true">
+          <h2 class="title page-title">Add Today Task or Goal</h2>
+          <label class="item item-input">
+            <input type="text" placeholder="Task name or description" ng-model="taskCtrl.newTask.name">
+          </label>
+          <button class="item button icon button-royal btn-icon-style ion-android-add"
+                  ng-disabled="taskCtrl.newTask.name === '' " ng-click="taskCtrl.addTask()">
+          </button>
+        </div>
+
+        <div ng-show="taskCtrl.isAddMode == false">
+          <h2 class="title page-title">Review Today's Task</h2>
+          <label class="item item-input">
+            <input type="text" placeholder="Select a task below" ng-model="taskCtrl.selectedTask.name">
+          </label>
+          <div class="item">
+            <button class="button icon button-royal btn-icon-style ion-checkmark-round"
+                    ng-disabled="taskCtrl.selectedTask === null" ng-click="taskCtrl.checkTask()">
+            </button>
+            <button class="button icon button-royal btn-icon-style ion-ios-redo"
+                    ng-disabled="taskCtrl.selectedTask === null" ng-click="taskCtrl.carryOverTask()">
+            </button>
+            <button class="button icon button-royal btn-icon-style ion-close-round"
+                    ng-disabled="taskCtrl.selectedTask === null" ng-click="taskCtrl.removeTask()">
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <ion-list>
+        <ion-item ng-repeat="task in taskCtrl.tasks" ng-click="taskCtrl.selectTask(task)">
+          <!--ng-class="taskCtrl.isSelected(task)">-->
+          {{task.name}}
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+    <div ng-show="taskCtrl.noInternetConnection">
+      <h2 class="center vertical-approximate-center">No internet connection, please check your network then <a
+        ng-click="taskCtrl.testConnection()">try again</a></h2>
+    </div>
+
+    <ion-spinner class="center vertical-approximate-center" ng-show="taskCtrl.loading" icon="spiral"></ion-spinner>
+
+  </ion-content>
+</ion-view>

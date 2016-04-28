@@ -1,0 +1,39 @@
+<ion-view view-title="Option">
+  <ion-content>
+
+    <div class="center">
+
+      <div class="card">
+        <h3 class="title page-title">Select the current user</h3>
+        <ion-list>
+          <ion-radio ng-model="optionCtrl.currentUser" ng-value="'Chris'" ng-click="optionCtrl.saveUser()">Chris
+          </ion-radio>
+          <ion-radio ng-model="optionCtrl.currentUser" ng-value="'Shanta'" ng-click="optionCtrl.saveUser()">Shanta
+          </ion-radio>
+        </ion-list>
+      </div>
+
+      <div class="card">
+        <h3 class="title page-title">Morning tasks definition time</h3>
+        <div class="row row-center">
+          <p class="col time-style">
+            {{optionCtrl.morningTimeReminder | date: 'HH:mm': 'UTC'}}
+          </p>
+          <button class="col button ion-ios-clock button-calm"
+                  ng-click="optionCtrl.pickMorningTimeReminder()"></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="title page-title">Evening tasks definition time</h3>
+        <div class="row row-center">
+          <p class="col time-style">
+            {{optionCtrl.eveningTimeReminder | date: 'HH:mm': 'UTC'}}
+          </p>
+          <button class="col button ion-ios-clock button-dark" ng-click="optionCtrl.pickEveningTimeReminder()"></button>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

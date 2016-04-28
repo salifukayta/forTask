@@ -1,0 +1,30 @@
+/* Center element */
+.center {
+  text-align:center;
+  display: block;
+}
+
+/* Margins for page title */
+.page-title {
+  margin-top: 20px !important;
+  margin-bottom: 20px;
+}
+
+/* Margins for btn icon */
+.btn-icon-style {
+  margin: 15px;
+}
+
+/* size text time */
+.time-style {
+  font-size: 20px;
+}
+
+/* loading approximately middle vertical align */
+.vertical-approximate-center{
+  margin-top: 100px !important;
+}
+
+.ft-icon {
+  margin-right: 20px;
+}
