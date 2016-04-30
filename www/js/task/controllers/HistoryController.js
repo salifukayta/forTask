@@ -57,5 +57,5 @@ ftApp.controller('HistoryController', ['$scope', 'taskService', function ($scope
         _this.loading = false;
       });
   });
-
+  
 }]);

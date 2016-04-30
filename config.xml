@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="sol.c3d.ft" version="0.5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="sol.c3d.ft" version="0.5.0" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>ForeTask</name>
   <description>
-        Forecast your Tasks.
-    </description>
+    Forecast your Tasks.
+  </description>
   <author email="solsalim@gmail.com" href="http://example.com.com/">
-      Salifukayta
-    </author>
+    Salifukayta
+  </author>
   <content src="index.html"/>
   <access origin="*"/>
   <access origin="http://fortask.3dchris.com/*"/>
-  <access origin="http://localhost/*"/>
-  <access origin="http://192.168.1.30/*"/>
+  <!--<access origin="http://localhost/*"/>-->
+  <!--<access origin="http://192.168.1.30/*"/>-->
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -28,6 +29,8 @@
   <plugin name="cordova-plugin-splashscreen" spec="~3.2.1"/>
   <plugin name="cordova-plugin-statusbar" spec="~2.1.2"/>
   <plugin name="ionic-plugin-keyboard" spec="~2.0.1"/>
+  <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.4"/>
+  <plugin name="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" spec="~2.5.1"/>
   <platform name="android">
     <icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources\android\icon\drawable-mdpi-icon.png" density="mdpi"/>
